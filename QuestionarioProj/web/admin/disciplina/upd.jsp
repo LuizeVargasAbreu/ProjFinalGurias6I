@@ -18,7 +18,7 @@
         return;
 
     }
-
+*/
 %>
 
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
