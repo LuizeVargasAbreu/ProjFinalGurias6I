@@ -1,7 +1,7 @@
-<%@page import="modelo.Categoria"%>
+<%@page import="modelo.Curso"%>
 <%@include file="../cabecalho.jsp"%>
-<%@page import="dao.PerguntaDAO"%>
-<%@page import="modelo.Pergunta"%>
+<%@page import="dao.MoniAvalDAO"%>
+<%@page import="modelo.MoniAval"%>
 <%
     String msg="";
     
@@ -20,27 +20,27 @@
         Integer nivel = Integer.parseInt(request.getParameter("txtNivel"));
         String certa = request.getParameter("txtCerta");
         String enunciado = request.getParameter("txtEnunciado");
-        Integer id = Integer.parseInt(request.getParameter("selCategoria")); 
+        Integer id = Integer.parseInt(request.getParameter("selCurso")); 
         
-        PerguntaDAO dao = new PerguntaDAO();
-        Pergunta pg = new Pergunta();
+        MoniAvalDAO dao = new MoniAvalDAO();
+        MoniAval ma = new MoniAval();
         
-        Categoria cat = new Categoria();
-        cat.setId(id);
+        Curso curso = new Curso();
+        curso.setId(id);
         
-      //  pg.setId(idzinho);
-        pg.setA(a);
-        pg.setB(b);
-        pg.setC(c);
-        pg.setD(d);
-        pg.setNivel(nivel);
-        pg.setCerta(certa);
-        pg.setEnunciado(enunciado);
-        pg.setCategoria(cat);
+      //  ma.setId(idzinho);
+        ma.setA(a);
+        ma.setB(b);
+        ma.setC(c);
+        ma.setD(d);
+        ma.setNivel(nivel);
+        ma.setCerta(certa);
+        ma.setEnunciado(enunciado);
+        ma.setCurso(curso);
        try
         {
-            dao.incluir(pg);
-            msg = "Pergunta cadastrada com sucesso";
+            dao.incluir(ma);
+            msg = "MoniAval cadastrada com sucesso";
             
         }
         catch(Exception ex)

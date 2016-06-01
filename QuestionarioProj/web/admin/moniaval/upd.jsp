@@ -2,8 +2,8 @@
 <%@page import="java.util.List"%>
 <%@page import="modelo.Categoria"%>
 <%@page import="dao.CategoriaDAO"%>
-<%@page import="dao.PerguntaDAO"%>
-<%@page import="modelo.Pergunta"%>
+<%@page import="dao.MoniAvalDAO"%>
+<%@page import="modelo.MoniAval"%>
 <%
     if (request.getParameter("idzinho") == null)
     {
@@ -12,8 +12,8 @@
     }
 
     Integer idzinho = Integer.parseInt(request.getParameter("idzinho"));
-    PerguntaDAO dao = new PerguntaDAO();
-    Pergunta pergunta = dao.buscarPorChavePrimaria(idzinho);
+    MoniAvalDAO dao = new MoniAvalDAO();
+    MoniAval pergunta = dao.buscarPorChavePrimaria(idzinho);
 
     if (pergunta == null)
     {
@@ -31,7 +31,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Pergunta - Atualizar</h4>
+            <h4>MoniAval - Atualizar</h4>
             <form action="upd-ok.jsp" method="post">
                 <!-- 
                     primeira div -- área que ocupará o campo de formulário

@@ -1,16 +1,16 @@
-<%@page import="modelo.Pergunta"%>
-<%@page import="dao.PerguntaDAO"%>
+<%@page import="modelo.MoniAval"%>
+<%@page import="dao.MoniAvalDAO"%>
 <%@page import="java.util.List"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-    PerguntaDAO dao = new PerguntaDAO();
+    MoniAvalDAO dao = new MoniAvalDAO();
 
-    List<Pergunta> lista;
+    List<MoniAval> lista;
 
     if (request.getParameter("txtFiltro") != null && request.getParameter("txtFiltro") != "")
     {
         String txtFiltro = request.getParameter("txtFiltro");
-        lista = dao.listar(txtFiltro);
+     //   lista = dao.listar(txtFiltro);
     }
     else
     {
@@ -30,7 +30,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Pergunta</h4>
+            <h4>MoniAval</h4>
             <!-- Colored mini FAB button -->
             <div class="direita">
                 <a href="add.jsp">
@@ -58,7 +58,7 @@
                     </tr>
                 </thead>
                 <%
-                   for (Pergunta item : lista) {
+                   for (MoniAval item : lista) {
                 %>
                 <tbody>
                     <tr>

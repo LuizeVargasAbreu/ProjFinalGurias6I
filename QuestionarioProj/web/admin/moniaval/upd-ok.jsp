@@ -1,7 +1,7 @@
 <%@page import="modelo.Categoria"%>
 <%@include file="../cabecalho.jsp"%>
-<%@page import="modelo.Pergunta"%>
-<%@page import="dao.PerguntaDAO"%>
+<%@page import="modelo.MoniAval"%>
+<%@page import="dao.MoniAvalDAO"%>
 <%
     if(request.getParameter("txtIdzinho") == null || request.getParameter("txtA")== null || request.getParameter("txtB")== null || request.getParameter("txtC")== null || request.getParameter("txtD")== null
             || request.getParameter("txtNivel")== null || request.getParameter("txtCerta")== null || request.getParameter("txtEnunciado")== null)
@@ -20,8 +20,8 @@
     String enunciado = request.getParameter("txtEnunciado");
     Integer id = Integer.parseInt(request.getParameter("selCategoria"));
 
-    PerguntaDAO dao = new PerguntaDAO();
-    Pergunta pergunta = dao.buscarPorChavePrimaria(idzinho);
+    MoniAvalDAO dao = new MoniAvalDAO();
+  //  MoniAval pergunta = dao.buscarPorChavePrimaria(idzinho);
     
     Categoria cat = new Categoria ();
     cat.setId(id);

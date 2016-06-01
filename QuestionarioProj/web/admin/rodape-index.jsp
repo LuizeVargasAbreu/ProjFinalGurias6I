@@ -11,7 +11,7 @@
 
 <footer class="mdl-mega-footer">
     <div class="mdl-mega-footer--middle-section">
-        Luize Vargas Abreu
+        Avaliação de Professores e Monitores
     </div>
 </footer>
 </main>

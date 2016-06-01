@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="modelo.Categoria"%>
-<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.Questionario"%>
+<%@page import="dao.QuestionarioDAO"%>
 <%
     if (request.getParameter("txtNome") == null || request.getParameter("txtID") == null)
     {
@@ -11,19 +11,19 @@
     String nome = request.getParameter("txtNome");
     Integer id = Integer.parseInt(request.getParameter("txtID"));
 
-    CategoriaDAO dao = new CategoriaDAO();
-    Categoria cat = dao.buscarPorChavePrimaria(id);
+    QuestionarioDAO dao = new QuestionarioDAO();
+    Questionario q = dao.buscarPorChavePrimaria(id);
 
-    if (cat == null)
+    if (q == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
-    cat.setNome(nome);
-    cat.setId(id);
+    q.setNome(nome);
+    q.setId(id);
    
 
-    dao.alterar(cat);
+    dao.alterar(q);
 
 
 

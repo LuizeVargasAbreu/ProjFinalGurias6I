@@ -1,11 +1,11 @@
-<%@page import="modelo.Categoria"%>
-<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.Questionario"%>
+<%@page import="dao.QuestionarioDAO"%>
 <%@page import="java.util.List"%>
 <%@include file="../cabecalho.jsp"%>
 <%
-    CategoriaDAO dao = new CategoriaDAO();
+    QuestionarioDAO dao = new QuestionarioDAO();
 
-    List<Categoria> lista;
+    List<Questionario> lista;
 
     if (request.getParameter("txtFiltro") != null && request.getParameter("txtFiltro") != "")
     {
@@ -30,7 +30,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Categoria</h4>
+            <h4>Questionario</h4>
             <!-- Colored mini FAB button -->
             <div class="direita">
                 <a href="add.jsp">
@@ -50,7 +50,7 @@
                     </tr>
                 </thead>
                 <%
-                   for (Categoria item : lista) {
+                   for (Questionario item : lista) {
                 %>
                 <tbody>
                     <tr>

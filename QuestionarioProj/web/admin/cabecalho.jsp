@@ -58,10 +58,13 @@
         </div>
         <div class=" mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="../index.jsp" class="mdl-layout__tab">Inicial</a>
-          <a href="../categoria/list.jsp" class="mdl-layout__tab">Categoria</a>
-          <a href="../jogador/list.jsp" class="mdl-layout__tab">Jogador</a>
-          <a href="../pergunta/list.jsp" class="mdl-layout__tab">Pergunta</a>
-          <a href="../ranking/list.jsp" class="mdl-layout__tab">Ranking</a>
+          <a href="../curso/list.jsp" class="mdl-layout__tab">Curso</a>
+          <a href="../disciplina/list.jsp" class="mdl-layout__tab">Disciplina</a>
+          <a href="../professor/list.jsp" class="mdl-layout__tab">Professor</a>
+          <a href="../monitor/list.jsp" class="mdl-layout__tab">Monitor</a>
+          <a href="../questionario/list.jsp" class="mdl-layout__tab">Questionário</a>
+          <a href="../profaval/list.jsp" class="mdl-layout__tab">Avaliação do Professor</a>
+          <a href="../moniaval/list.jsp" class="mdl-layout__tab">Avaliação do Monitor</a>
         </div>
       </header>
       <main class="mdl-layout__content">

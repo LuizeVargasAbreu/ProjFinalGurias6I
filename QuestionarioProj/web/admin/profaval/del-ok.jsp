@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="modelo.Categoria"%>
-<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.ProfAval"%>
+<%@page import="dao.ProfAvalDAO"%>
 <%
     String msg = "";
     if(request.getParameter("id")==null)
@@ -11,17 +11,17 @@
     {
         Integer id = Integer.parseInt(request.getParameter("id"));
         
-        CategoriaDAO dao = new CategoriaDAO();
+        ProfAvalDAO dao = new ProfAvalDAO();
 
-        Categoria cat = dao.buscarPorChavePrimaria(id);
-        if(cat!=null)
+        ProfAval pa = dao.buscarPorChavePrimaria(id);
+        if(pa!=null)
         {
-            dao.excluir(cat);
-            msg = "Registro de Categoria excluído com sucesso";
+            dao.excluir(pa);
+            msg = "Registro de ProfAval excluído com sucesso";
         }
         else
         {
-            msg = "Registro de Categoria não encontrado. Verifique.";
+            msg = "Registro de ProfAval não encontrado. Verifique.";
         }
         
     }

@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="dao.CategoriaDAO"%>
-<%@page import="modelo.Categoria"%>
+<%@page import="dao.QuestionarioDAO"%>
+<%@page import="modelo.Questionario"%>
 <%
     if (request.getParameter("id") == null)
     {
@@ -9,10 +9,10 @@
     }
 
     Integer id = Integer.parseInt(request.getParameter("id"));
-    CategoriaDAO dao = new CategoriaDAO();
-    Categoria cat = dao.buscarPorChavePrimaria(id);
+    QuestionarioDAO dao = new QuestionarioDAO();
+    Questionario q = dao.buscarPorChavePrimaria(id);
 
-    if (cat == null)
+    if (q == null)
     {
         response.sendRedirect("list.jsp");
         return;
@@ -24,7 +24,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>Categoria - Atualizar</h4>
+            <h4>Questionario - Atualizar</h4>
             <form action="upd-ok.jsp" method="post">
                 <!-- 
                     primeira div -- área que ocupará o campo de formulário
@@ -32,14 +32,14 @@
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtID" value="<%=cat.getId()%>" readonly="readonly" />
+                        <input class="mdl-textfield__input" type="text" required  name="txtID" value="<%=q.getId()%>" readonly="readonly" />
                         <label class="mdl-textfield__label" for="txtID">ID</label>
                     </div>
                 </div>
                 
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtNome" value="<%=cat.getNome()%>" />
+                        <input class="mdl-textfield__input" type="text" required  name="txtNome" value="<%=q.getNome()%>" />
                         <label class="mdl-textfield__label" for="txtNome">Nome</label>
                     </div>
                 </div>

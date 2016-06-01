@@ -1,11 +1,11 @@
-<%@page import="modelo.Categoria"%>
-<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.MoniAval"%>
+<%@page import="dao.MoniAvalDAO"%>
 <%@page import="java.util.List"%>
 <%@include file="../cabecalho.jsp"%>
 <%
 //Listagem de cursos
-    CategoriaDAO dao = new CategoriaDAO();
-    List<Categoria> lista = dao.listar();
+    MoniAvalDAO dao = new MoniAvalDAO();
+    List<MoniAval> lista = dao.listar();
 //listagem de professores
     
 %>
@@ -90,10 +90,10 @@
                 
                     <div class="mdl-cell--12-col">
                     <div class="mdl-select mdl-js-select mdl-select--floating-label">
-                        <select class="mdl-select__input" id="professsion" name="selCategoria">
+                        <select class="mdl-select__input" id="professsion" name="selMoniAval">
                             <option value="">Selecione a categoria</option>
                             <%                           
-                                for (Categoria item : lista) {
+                                for (MoniAval item : lista) {
                             %>
                             <option value="<%=item.getId()%>"><%=item%></option>
                             <%
@@ -101,7 +101,7 @@
                             %>
 
                         </select> <br />
-                        <label class="mdl-select__label" for="selCategoria">Categoria selecionada</label>
+                        <label class="mdl-select__label" for="selMoniAval">MoniAval selecionada</label>
                     </div>
                    </div>
 

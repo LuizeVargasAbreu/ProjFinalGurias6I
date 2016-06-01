@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="dao.CategoriaDAO"%>
-<%@page import="modelo.Categoria"%>
+<%@page import="dao.MonitorDAO"%>
+<%@page import="modelo.Monitor"%>
 <%
     String msg="";
     
@@ -14,21 +14,21 @@
         String nome = request.getParameter("txtNome");
      //   Integer id = Integer.parseInt(request.getParameter("txtID"));
         
-        CategoriaDAO dao = new CategoriaDAO();
-        Categoria cat = new Categoria();
+        MonitorDAO dao = new MonitorDAO();
+        Monitor mon = new Monitor();
 
-        cat.setNome(nome);
-     //   cat.setId(id);
+        mon.setNome(nome);
+     //   mon.setId(id);
         
        try
         {
-            dao.incluir(cat);
-            msg = "Categoria cadastrada com sucesso";
+            dao.incluir(mon);
+            msg = "Monitor cadastrada com sucesso";
             
         }
         catch(Exception ex)
         {
-            msg = "Erro ao cadastrar categoria";
+            msg = "Erro ao cadastrar monitor";
         }
         
     }
@@ -42,7 +42,7 @@
         <div class="mdl-card__supporting-text ">
              <%=msg%>.<br />
              Nome: <%=nome%><br />
-<!--             ID da Categoria: <%//=id%><br />-->
+<!--             ID da Monitor: <%//=id%><br />-->
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>

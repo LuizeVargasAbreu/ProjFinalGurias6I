@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="dao.CategoriaDAO"%>
-<%@page import="modelo.Categoria"%>
+<%@page import="dao.ProfessorDAO"%>
+<%@page import="modelo.Professor"%>
 <%
     String msg="";
     
@@ -14,21 +14,21 @@
         String nome = request.getParameter("txtNome");
      //   Integer id = Integer.parseInt(request.getParameter("txtID"));
         
-        CategoriaDAO dao = new CategoriaDAO();
-        Categoria cat = new Categoria();
+        ProfessorDAO dao = new ProfessorDAO();
+        Professor prof = new Professor();
 
-        cat.setNome(nome);
-     //   cat.setId(id);
+        prof.setNome(nome);
+     //   prof.setId(id);
         
        try
         {
-            dao.incluir(cat);
-            msg = "Categoria cadastrada com sucesso";
+            dao.incluir(prof);
+            msg = "Professor cadastrada com sucesso";
             
         }
         catch(Exception ex)
         {
-            msg = "Erro ao cadastrar categoria";
+            msg = "Erro ao cadastrar profegoria";
         }
         
     }
@@ -42,7 +42,7 @@
         <div class="mdl-card__supporting-text ">
              <%=msg%>.<br />
              Nome: <%=nome%><br />
-<!--             ID da Categoria: <%//=id%><br />-->
+<!--             ID da Professor: <%//=id%><br />-->
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>

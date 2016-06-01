@@ -1,6 +1,6 @@
 <%@include file="../cabecalho.jsp"%>
-<%@page import="modelo.Categoria"%>
-<%@page import="dao.CategoriaDAO"%>
+<%@page import="modelo.Questionario"%>
+<%@page import="dao.QuestionarioDAO"%>
 <%
     String msg = "";
     if(request.getParameter("id")==null)
@@ -11,17 +11,17 @@
     {
         Integer id = Integer.parseInt(request.getParameter("id"));
         
-        CategoriaDAO dao = new CategoriaDAO();
+        QuestionarioDAO dao = new QuestionarioDAO();
 
-        Categoria cat = dao.buscarPorChavePrimaria(id);
-        if(cat!=null)
+        Questionario q = dao.buscarPorChavePrimaria(id);
+        if(q!=null)
         {
-            dao.excluir(cat);
-            msg = "Registro de Categoria excluído com sucesso";
+            dao.excluir(q);
+            msg = "Registro de Questionario excluído com sucesso";
         }
         else
         {
-            msg = "Registro de Categoria não encontrado. Verifique.";
+            msg = "Registro de Questionario não encontrado. Verifique.";
         }
         
     }
