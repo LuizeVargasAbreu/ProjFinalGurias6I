@@ -37,7 +37,7 @@ public class Monitor implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_monitor")
-    private Long idMonitor;
+    private Integer idMonitor;
     @Basic(optional = false)
     @Column(name = "mon_periodo")
     private String monPeriodo;
@@ -52,21 +52,21 @@ public class Monitor implements Serializable {
     public Monitor() {
     }
 
-    public Monitor(Long idMonitor) {
+    public Monitor(Integer idMonitor) {
         this.idMonitor = idMonitor;
     }
 
-    public Monitor(Long idMonitor, String monPeriodo, String monNome) {
+    public Monitor(Integer idMonitor, String monPeriodo, String monNome) {
         this.idMonitor = idMonitor;
         this.monPeriodo = monPeriodo;
         this.monNome = monNome;
     }
 
-    public Long getIdMonitor() {
+    public Integer getIdMonitor() {
         return idMonitor;
     }
 
-    public void setIdMonitor(Long idMonitor) {
+    public void setIdMonitor(Integer idMonitor) {
         this.idMonitor = idMonitor;
     }
 

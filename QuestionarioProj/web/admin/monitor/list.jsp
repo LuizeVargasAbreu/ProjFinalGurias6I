@@ -10,7 +10,7 @@
     if (request.getParameter("txtFiltro") != null && request.getParameter("txtFiltro") != "")
     {
         String txtFiltro = request.getParameter("txtFiltro");
-     //   lista = dao.listar(txtFiltro);
+        lista = dao.listar(txtFiltro);
     }
     else
     {
@@ -46,6 +46,7 @@
 
                         <th>ID</th>
                         <th>Nome</th>
+                        <th>Período<th/>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -54,14 +55,15 @@
                 %>
                 <tbody>
                     <tr>
-                        <td><%=item.getId()%></td>
-                        <td><%=item.getNome()%></td>
+                        <td><%=item.getIdMonitor()%></td>
+                        <td><%=item.getMonNome()%></td>
+                        <td><%=item.getMonPeriodo()%></td>
                         <td>
                             <!-- 
                                 Atualizar 
                             -->
                             <div id="ttupd" class="icon material-icons">
-                                <i class="material-icons"><a href="upd.jsp?id=<%=item.getId()%>">update</a></i>
+                                <i class="material-icons"><a href="upd.jsp?ID=<%=item.getIdMonitor()%>">update</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttupd">
                                 Atualizar
@@ -70,7 +72,7 @@
                                 Excluir 
                             -->
                             <div id="ttdel" class="icon material-icons">
-                                <i class="material-icons"><a href="del-ok.jsp?id=<%=item.getId()%>">delete</a></i>
+                                <i class="material-icons"><a href="del-ok.jsp?ID=<%=item.getIdMonitor()%>">delete</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttdel">
                                 Excluir

@@ -37,7 +37,7 @@ public class Professor implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_professor")
-    private Long idProfessor;
+    private Integer idProfessor;
     @Basic(optional = false)
     @Column(name = "prof_periodo")
     private String profPeriodo;
@@ -52,21 +52,21 @@ public class Professor implements Serializable {
     public Professor() {
     }
 
-    public Professor(Long idProfessor) {
+    public Professor(Integer idProfessor) {
         this.idProfessor = idProfessor;
     }
 
-    public Professor(Long idProfessor, String profPeriodo, String profNome) {
+    public Professor(Integer idProfessor, String profPeriodo, String profNome) {
         this.idProfessor = idProfessor;
         this.profPeriodo = profPeriodo;
         this.profNome = profNome;
     }
 
-    public Long getIdProfessor() {
+    public Integer getIdProfessor() {
         return idProfessor;
     }
 
-    public void setIdProfessor(Long idProfessor) {
+    public void setIdProfessor(Integer idProfessor) {
         this.idProfessor = idProfessor;
     }
 

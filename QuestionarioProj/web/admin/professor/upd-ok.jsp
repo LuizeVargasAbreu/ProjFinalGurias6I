@@ -2,30 +2,30 @@
 <%@page import="modelo.Professor"%>
 <%@page import="dao.ProfessorDAO"%>
 <%
-    if (request.getParameter("txtNome") == null || request.getParameter("txtID") == null)
+    if (request.getParameter("txtIdProf")== null || request.getParameter("txtNmProfessor") == null || request.getParameter("txtPeriodoProf") == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
 
-    String nome = request.getParameter("txtNome");
-    Integer id = Integer.parseInt(request.getParameter("txtID"));
+    Integer idProfessor = Integer.parseInt(request.getParameter("txtIdProf"));
+    String nm_prof = request.getParameter("txtNmProfessor");
+    String per_prof = request.getParameter("txtPeriodoProf");
 
     ProfessorDAO dao = new ProfessorDAO();
-    Professor prof = dao.buscarPorChavePrimaria(id);
+    Professor prof = dao.buscarPorChavePrimaria(idProfessor);
 
     if (prof == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
-    prof.setNome(nome);
-    prof.setId(id);
+    
+    prof.setIdProfessor(idProfessor);
+    prof.setProfNome(nm_prof);
+    prof.setProfPeriodo(per_prof);
    
-
     dao.alterar(prof);
-
-
 
 %>
 

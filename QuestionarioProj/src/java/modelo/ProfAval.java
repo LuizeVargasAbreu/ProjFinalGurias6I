@@ -6,7 +6,7 @@
 package modelo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+import java.lang.Integer;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,55 +45,55 @@ public class ProfAval implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_profaval")
-    private Long idProfaval;
+    private Integer idProfaval;
     @Basic(optional = false)
     @Column(name = "pa_periodo")
     private String paPeriodo;
     @Basic(optional = false)
     @Column(name = "pa_resposta1")
-    private BigInteger paResposta1;
+    private Integer paResposta1;
     @Basic(optional = false)
     @Column(name = "pa_resposta2")
-    private BigInteger paResposta2;
+    private Integer paResposta2;
     @Basic(optional = false)
     @Column(name = "pa_resposta3")
-    private BigInteger paResposta3;
+    private Integer paResposta3;
     @Basic(optional = false)
     @Column(name = "pa_resposta4")
-    private BigInteger paResposta4;
+    private Integer paResposta4;
     @Basic(optional = false)
     @Column(name = "pa_resposta5")
-    private BigInteger paResposta5;
+    private Integer paResposta5;
     @Basic(optional = false)
     @Column(name = "pa_resposta6")
-    private BigInteger paResposta6;
+    private Integer paResposta6;
     @Basic(optional = false)
     @Column(name = "pa_resposta7")
-    private BigInteger paResposta7;
+    private Integer paResposta7;
     @Basic(optional = false)
     @Column(name = "pa_resposta8")
-    private BigInteger paResposta8;
+    private Integer paResposta8;
     @Basic(optional = false)
     @Column(name = "pa_resposta9")
-    private BigInteger paResposta9;
+    private Integer paResposta9;
     @Basic(optional = false)
     @Column(name = "pa_resposta10")
-    private BigInteger paResposta10;
+    private Integer paResposta10;
     @JoinColumn(name = "id_professor", referencedColumnName = "id_professor")
     @ManyToOne(optional = false)
-    private Professor idProfessor;
+    private Professor Professor;
     @JoinColumn(name = "id_questionario", referencedColumnName = "id_questionario")
     @ManyToOne(optional = false)
-    private Questionario idQuestionario;
+    private Questionario Questionario;
 
     public ProfAval() {
     }
 
-    public ProfAval(Long idProfaval) {
+    public ProfAval(Integer idProfaval) {
         this.idProfaval = idProfaval;
     }
 
-    public ProfAval(Long idProfaval, String paPeriodo, BigInteger paResposta1, BigInteger paResposta2, BigInteger paResposta3, BigInteger paResposta4, BigInteger paResposta5, BigInteger paResposta6, BigInteger paResposta7, BigInteger paResposta8, BigInteger paResposta9, BigInteger paResposta10) {
+    public ProfAval(Integer idProfaval, String paPeriodo, Integer paResposta1, Integer paResposta2, Integer paResposta3, Integer paResposta4, Integer paResposta5, Integer paResposta6, Integer paResposta7, Integer paResposta8, Integer paResposta9, Integer paResposta10) {
         this.idProfaval = idProfaval;
         this.paPeriodo = paPeriodo;
         this.paResposta1 = paResposta1;
@@ -108,11 +108,11 @@ public class ProfAval implements Serializable {
         this.paResposta10 = paResposta10;
     }
 
-    public Long getIdProfaval() {
+    public Integer getIdProfaval() {
         return idProfaval;
     }
 
-    public void setIdProfaval(Long idProfaval) {
+    public void setIdProfaval(Integer idProfaval) {
         this.idProfaval = idProfaval;
     }
 
@@ -124,100 +124,100 @@ public class ProfAval implements Serializable {
         this.paPeriodo = paPeriodo;
     }
 
-    public BigInteger getPaResposta1() {
+    public Integer getPaResposta1() {
         return paResposta1;
     }
 
-    public void setPaResposta1(BigInteger paResposta1) {
+    public void setPaResposta1(Integer paResposta1) {
         this.paResposta1 = paResposta1;
     }
 
-    public BigInteger getPaResposta2() {
+    public Integer getPaResposta2() {
         return paResposta2;
     }
 
-    public void setPaResposta2(BigInteger paResposta2) {
+    public void setPaResposta2(Integer paResposta2) {
         this.paResposta2 = paResposta2;
     }
 
-    public BigInteger getPaResposta3() {
+    public Integer getPaResposta3() {
         return paResposta3;
     }
 
-    public void setPaResposta3(BigInteger paResposta3) {
+    public void setPaResposta3(Integer paResposta3) {
         this.paResposta3 = paResposta3;
     }
 
-    public BigInteger getPaResposta4() {
+    public Integer getPaResposta4() {
         return paResposta4;
     }
 
-    public void setPaResposta4(BigInteger paResposta4) {
+    public void setPaResposta4(Integer paResposta4) {
         this.paResposta4 = paResposta4;
     }
 
-    public BigInteger getPaResposta5() {
+    public Integer getPaResposta5() {
         return paResposta5;
     }
 
-    public void setPaResposta5(BigInteger paResposta5) {
+    public void setPaResposta5(Integer paResposta5) {
         this.paResposta5 = paResposta5;
     }
 
-    public BigInteger getPaResposta6() {
+    public Integer getPaResposta6() {
         return paResposta6;
     }
 
-    public void setPaResposta6(BigInteger paResposta6) {
+    public void setPaResposta6(Integer paResposta6) {
         this.paResposta6 = paResposta6;
     }
 
-    public BigInteger getPaResposta7() {
+    public Integer getPaResposta7() {
         return paResposta7;
     }
 
-    public void setPaResposta7(BigInteger paResposta7) {
+    public void setPaResposta7(Integer paResposta7) {
         this.paResposta7 = paResposta7;
     }
 
-    public BigInteger getPaResposta8() {
+    public Integer getPaResposta8() {
         return paResposta8;
     }
 
-    public void setPaResposta8(BigInteger paResposta8) {
+    public void setPaResposta8(Integer paResposta8) {
         this.paResposta8 = paResposta8;
     }
 
-    public BigInteger getPaResposta9() {
+    public Integer getPaResposta9() {
         return paResposta9;
     }
 
-    public void setPaResposta9(BigInteger paResposta9) {
+    public void setPaResposta9(Integer paResposta9) {
         this.paResposta9 = paResposta9;
     }
 
-    public BigInteger getPaResposta10() {
+    public Integer getPaResposta10() {
         return paResposta10;
     }
 
-    public void setPaResposta10(BigInteger paResposta10) {
+    public void setPaResposta10(Integer paResposta10) {
         this.paResposta10 = paResposta10;
     }
 
-    public Professor getIdProfessor() {
-        return idProfessor;
+    public Professor getProfessor() {
+        return Professor;
     }
 
-    public void setIdProfessor(Professor idProfessor) {
-        this.idProfessor = idProfessor;
+    public void setProfessor(Professor idProfessor) {
+        this.Professor = idProfessor;
     }
 
-    public Questionario getIdQuestionario() {
-        return idQuestionario;
+    public Questionario getQuestionario() {
+        return Questionario;
     }
 
-    public void setIdQuestionario(Questionario idQuestionario) {
-        this.idQuestionario = idQuestionario;
+    public void setQuestionario(Questionario idQuestionario) {
+        this.Questionario = idQuestionario;
     }
 
     @Override

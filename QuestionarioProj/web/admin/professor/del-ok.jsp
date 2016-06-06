@@ -3,17 +3,17 @@
 <%@page import="dao.ProfessorDAO"%>
 <%
     String msg = "";
-    if(request.getParameter("id")==null)
+    if(request.getParameter("IdProf")==null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        Integer idProfessor = Integer.parseInt(request.getParameter("IdProf"));
         
         ProfessorDAO dao = new ProfessorDAO();
 
-        Professor prof = dao.buscarPorChavePrimaria(id);
+        Professor prof = dao.buscarPorChavePrimaria(idProfessor);
         if(prof!=null)
         {
             dao.excluir(prof);

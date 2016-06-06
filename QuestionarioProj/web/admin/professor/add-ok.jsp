@@ -4,36 +4,40 @@
 <%
     String msg="";
     
-    if(request.getParameter("txtNome") == null)// || request.getParameter("txtID")== null)
+    if(request.getParameter("txtIdProf")== null || request.getParameter("txtNmProfessor") == null || request.getParameter("txtPeriodoProf") == null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
-             
-        String nome = request.getParameter("txtNome");
-     //   Integer id = Integer.parseInt(request.getParameter("txtID"));
         
+        Integer idProfessor = Integer.parseInt(request.getParameter("txtIdProf"));
+        String nm_prof = request.getParameter("txtNmProfessor");
+        String per_prof = request.getParameter("txtPeriodoProf");
+                
         ProfessorDAO dao = new ProfessorDAO();
         Professor prof = new Professor();
 
-        prof.setNome(nome);
-     //   prof.setId(id);
+        prof.setIdProfessor(idProfessor);
+        prof.setProfNome(nm_prof);
+        prof.setProfPeriodo(per_prof);
         
        try
         {
             dao.incluir(prof);
-            msg = "Professor cadastrada com sucesso";
+            msg = "Cadastro de Professor feito com sucesso";
             
         }
         catch(Exception ex)
         {
-            msg = "Erro ao cadastrar profegoria";
+            msg = "Erro ao fazer cadastro de professor";
         }
         
     }
-    String nome = request.getParameter("txtNome");
-   // String id = request.getParameter("txtID");
+    
+    String idProfessor = request.getParameter("txtIdProf");
+    String nm_prof = request.getParameter("txtNmProfessor");
+    String per_prof = request.getParameter("txtPeriodoProf");
 
 %>
 
@@ -41,8 +45,9 @@
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text ">
              <%=msg%>.<br />
-             Nome: <%=nome%><br />
-<!--             ID da Professor: <%//=id%><br />-->
+             ID de Professor: <%=idProfessor%><br />
+             Nome: <%=nm_prof%><br />
+             Período: <%=per_prof%><br />
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>

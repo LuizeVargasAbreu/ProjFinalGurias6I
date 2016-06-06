@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.ProfAval;
 
 /**
@@ -38,6 +39,14 @@ public class ProfAvalDAO {
         return em.createNamedQuery("ProfAval.findAll").getResultList();
     }
     
+    public List<ProfAval> listar(String nome) throws Exception {
+         TypedQuery<ProfAval> query = 
+                 em.createNamedQuery("ProfAval.findByName", ProfAval.class);
+         
+         query.setParameter("nome", '%' + nome + '%');
+         return query.getResultList();
+    }
+    
     public void alterar(ProfAval obj) throws Exception {
         
         try {
@@ -64,7 +73,12 @@ public class ProfAvalDAO {
             //em.close();
         }
     }
-
+    
+     public ProfAval buscarPorChavePrimaria(Integer chave)
+    {
+        return em.find(ProfAval.class, chave);
+    }
+    
     public void fechaEmf() {
         em.close();
         Conexao.closeConexao();

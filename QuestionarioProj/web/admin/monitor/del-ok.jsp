@@ -3,17 +3,17 @@
 <%@page import="dao.MonitorDAO"%>
 <%
     String msg = "";
-    if(request.getParameter("id")==null)
+    if(request.getParameter("ID")==null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        Integer idMonitor = Integer.parseInt(request.getParameter("ID"));
         
         MonitorDAO dao = new MonitorDAO();
 
-        Monitor mon = dao.buscarPorChavePrimaria(id);
+        Monitor mon = dao.buscarPorChavePrimaria(idMonitor);
         if(mon!=null)
         {
             dao.excluir(mon);

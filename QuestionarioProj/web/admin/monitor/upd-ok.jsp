@@ -2,25 +2,28 @@
 <%@page import="modelo.Monitor"%>
 <%@page import="dao.MonitorDAO"%>
 <%
-    if (request.getParameter("txtNome") == null || request.getParameter("txtID") == null)
+    if (request.getParameter("txtNome") == null || request.getParameter("txtID") == null || request.getParameter("txtPeriodo") == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
 
+    Integer idMonitor = Integer.parseInt(request.getParameter("txtID"));
     String nome = request.getParameter("txtNome");
-    Integer id = Integer.parseInt(request.getParameter("txtID"));
+    String periodo = request.getParameter("txtPeriodo");
 
     MonitorDAO dao = new MonitorDAO();
-    Monitor mon = dao.buscarPorChavePrimaria(id);
+    Monitor mon = dao.buscarPorChavePrimaria(idMonitor);
 
     if (mon == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
-    mon.setNome(nome);
-    mon.setId(id);
+    
+    mon.setIdMonitor(idMonitor);
+    mon.setMonNome(nome);
+    mon.setMonPeriodo(periodo);
    
 
     dao.alterar(mon);
@@ -33,7 +36,7 @@
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text ">
             <h4>Atualizar</h4>
-            <p>Registro atualizado com sucesso.</p>
+            <p>Registro de monitores atualizado com sucesso.</p>
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>

@@ -44,8 +44,9 @@
                 <thead>
                     <tr>
 
-                        <th>ID</th>
+                        <th>ID do Professor</th>
                         <th>Nome</th>
+                        <th>Período</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -54,14 +55,15 @@
                 %>
                 <tbody>
                     <tr>
-                        <td><%=item.getId()%></td>
-                        <td><%=item.getNome()%></td>
+                        <td><%=item.getIdProfessor()%></td>
+                        <td><%=item.getProfNome()%></td>
+                        <td><%=item.getProfPeriodo()%></td>
                         <td>
                             <!-- 
                                 Atualizar 
                             -->
                             <div id="ttupd" class="icon material-icons">
-                                <i class="material-icons"><a href="upd.jsp?id=<%=item.getId()%>">update</a></i>
+                                <i class="material-icons"><a href="upd.jsp?IdProf=<%=item.getIdProfessor()%>">update</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttupd">
                                 Atualizar
@@ -70,7 +72,7 @@
                                 Excluir 
                             -->
                             <div id="ttdel" class="icon material-icons">
-                                <i class="material-icons"><a href="del-ok.jsp?id=<%=item.getId()%>">delete</a></i>
+                                <i class="material-icons"><a href="del-ok.jsp?IdProf=<%=item.getIdProfessor()%>">delete</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttdel">
                                 Excluir

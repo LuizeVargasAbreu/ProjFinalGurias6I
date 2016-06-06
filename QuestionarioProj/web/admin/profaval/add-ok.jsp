@@ -4,36 +4,40 @@
 <%
     String msg="";
     
-    if(request.getParameter("txtNome") == null)// || request.getParameter("txtID")== null)
+    if(request.getParameter("txtIdpa") == null || request.getParameter("txtPeriodoPA")== null || request.getParameter("txtPAResposta") == null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
              
-        String nome = request.getParameter("txtNome");
-     //   Integer id = Integer.parseInt(request.getParameter("txtID"));
+        Integer idPA = Integer.parseInt(request.getParameter("txtIdpa"));
+        String periodoPA = request.getParameter("txtPeriodoPA");
+        Integer respostaPA = Integer.parseInt(request.getParameter("txtPAResposta"));
         
         ProfAvalDAO dao = new ProfAvalDAO();
         ProfAval pa = new ProfAval();
 
-        pa.setNome(nome);
-     //   pa.setId(id);
+        pa.setIdProfaval(idPA);
+        pa.setPaPeriodo(periodoPA);
+        pa.setPaResposta1(respostaPA);
         
        try
         {
             dao.incluir(pa);
-            msg = "ProfAval cadastrada com sucesso";
+            msg = "Avaliação do Professor cadastrada com sucesso";
             
         }
         catch(Exception ex)
         {
-            msg = "Erro ao cadastrar paegoria";
+            msg = "Erro ao cadastrar avaliação";
         }
         
     }
-    String nome = request.getParameter("txtNome");
-   // String id = request.getParameter("txtID");
+    
+    String idPA = request.getParameter("txtIdpa");
+    String periodoPA = request.getParameter("txtPeriodoPA");
+    String respostaPA = request.getParameter("txtPAResposta");
 
 %>
 
@@ -41,8 +45,9 @@
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text ">
              <%=msg%>.<br />
-             Nome: <%=nome%><br />
-<!--             ID da ProfAval: <%//=id%><br />-->
+             Id da Avaliação do Professor: <%=idPA%><br />
+             Período da Avaliação: <%=periodoPA%><br />
+             Resposta: <%=respostaPA%><br />
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>

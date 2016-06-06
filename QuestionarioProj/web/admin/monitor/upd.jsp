@@ -2,22 +2,25 @@
 <%@page import="dao.MonitorDAO"%>
 <%@page import="modelo.Monitor"%>
 <%
-    if (request.getParameter("id") == null)
+    if (request.getParameter("ID") == null)
     {
         response.sendRedirect("list.jsp");
         return;
     }
 
-    Integer id = Integer.parseInt(request.getParameter("id"));
+    Integer idMonitor = Integer.parseInt(request.getParameter("ID"));
+    String nome = request.getParameter("txtNome");
+    String periodo = request.getParameter("txtPeriodo");
+    
     MonitorDAO dao = new MonitorDAO();
-   /* Monitor mon = dao.buscarPorChavePrimaria(id);
+    Monitor mon = dao.buscarPorChavePrimaria(idMonitor);
 
     if (mon == null)
     {
         response.sendRedirect("list.jsp");
         return;
 
-    }*/
+    }
 
 %>
 
@@ -32,15 +35,23 @@
                 -->
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtID" value="<%=mon.getId()%>" readonly="readonly" />
-                        <label class="mdl-textfield__label" for="txtID">ID</label>
+                        <input class="mdl-textfield__input" type="text" required  name="txtID" value="<%=mon.getIdMonitor()%>" readonly="readonly" />
+                        <label class="mdl-textfield__label" for="txtID">ID de Monitor</label>
                     </div>
                 </div>
                 
                 <div class="mdl-cell--12-col"> 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" required  name="txtNome" value="<%=mon.getNome()%>" />
+                        <input class="mdl-textfield__input" type="text" required  name="txtNome" value="<%=mon.getMonNome()%>" />
                         <label class="mdl-textfield__label" for="txtNome">Nome</label>
+                    </div>
+                </div>
+                        
+                
+                <div class="mdl-cell--12-col"> 
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" required  name="txtPeriodo" value="<%=mon.getMonPeriodo()%>" />
+                        <label class="mdl-textfield__label" for="txtPeriodo">Período</label>
                     </div>
                 </div>
                 

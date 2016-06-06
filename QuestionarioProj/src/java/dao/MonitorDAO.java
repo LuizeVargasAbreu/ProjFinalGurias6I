@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.TypedQuery;
 import modelo.Monitor;
 
 /**
@@ -38,6 +39,14 @@ public class MonitorDAO {
         return em.createNamedQuery("Monitor.findAll").getResultList();
     }
     
+    public List<Monitor> listar(String nome) throws Exception {
+         TypedQuery<Monitor> query = 
+                 em.createNamedQuery("Monitor.findByName", Monitor.class);
+         
+         query.setParameter("nome", '%' + nome + '%');
+         return query.getResultList();
+    }
+    
     public void alterar(Monitor obj) throws Exception {
         
         try {
@@ -63,6 +72,11 @@ public class MonitorDAO {
         } finally {
             //em.close();
         }
+    }
+    
+     public Monitor buscarPorChavePrimaria(Integer chave)
+    {
+        return em.find(Monitor.class, chave);
     }
 
     public void fechaEmf() {

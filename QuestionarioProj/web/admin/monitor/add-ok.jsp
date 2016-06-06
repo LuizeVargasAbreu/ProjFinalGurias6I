@@ -4,36 +4,42 @@
 <%
     String msg="";
     
-    if(request.getParameter("txtNome") == null)// || request.getParameter("txtID")== null)
+    if(request.getParameter("txtID")== null || request.getParameter("txtNome") == null || request.getParameter("txtPeriodo") == null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
-             
+        Integer idMonitor = Integer.parseInt(request.getParameter("txtID"));
         String nome = request.getParameter("txtNome");
-     //   Integer id = Integer.parseInt(request.getParameter("txtID"));
-        
+        String periodo = request.getParameter("txtPeriodo");
+            
         MonitorDAO dao = new MonitorDAO();
         Monitor mon = new Monitor();
 
-        mon.setNome(nome);
-     //   mon.setId(id);
+        mon.setIdMonitor(idMonitor);
+        mon.setMonNome(nome);
+        mon.setMonPeriodo(periodo);
+        
+        
         
        try
         {
             dao.incluir(mon);
-            msg = "Monitor cadastrada com sucesso";
+            msg = "Cadastro de Monitor feito com sucesso";
             
         }
         catch(Exception ex)
         {
-            msg = "Erro ao cadastrar monitor";
+            msg = "Erro ao fazer cadastro de monitor";
         }
         
     }
+   
+    String idMonitor = request.getParameter("txtID");
     String nome = request.getParameter("txtNome");
-   // String id = request.getParameter("txtID");
+    String periodo = request.getParameter("txtPeriodo");
+   
 
 %>
 
@@ -41,8 +47,9 @@
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text ">
              <%=msg%>.<br />
+             ID do Monitor: <%=idMonitor%><br />
              Nome: <%=nome%><br />
-<!--             ID da Monitor: <%//=id%><br />-->
+             Período: <%=periodo%><br />
             <a href="list.jsp"><i class="material-icons">list</i></a>
             
         </div>
