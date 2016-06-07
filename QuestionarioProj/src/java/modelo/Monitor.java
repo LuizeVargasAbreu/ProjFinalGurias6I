@@ -27,17 +27,14 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "monitor")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Monitor.findAll", query = "SELECT m FROM Monitor m"),
-    @NamedQuery(name = "Monitor.findByIdMonitor", query = "SELECT m FROM Monitor m WHERE m.idMonitor = :idMonitor"),
-    @NamedQuery(name = "Monitor.findByMonPeriodo", query = "SELECT m FROM Monitor m WHERE m.monPeriodo = :monPeriodo"),
-    @NamedQuery(name = "Monitor.findByMonNome", query = "SELECT m FROM Monitor m WHERE m.monNome = :monNome")})
+    @NamedQuery(name = "Monitor.findAll", query = "SELECT m FROM Monitor m")})
 public class Monitor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "id_monitor")
-    private Integer idMonitor;
+    private Long idMonitor;
     @Basic(optional = false)
     @Column(name = "mon_periodo")
     private String monPeriodo;
@@ -52,21 +49,21 @@ public class Monitor implements Serializable {
     public Monitor() {
     }
 
-    public Monitor(Integer idMonitor) {
+    public Monitor(Long idMonitor) {
         this.idMonitor = idMonitor;
     }
 
-    public Monitor(Integer idMonitor, String monPeriodo, String monNome) {
+    public Monitor(Long idMonitor, String monPeriodo, String monNome) {
         this.idMonitor = idMonitor;
         this.monPeriodo = monPeriodo;
         this.monNome = monNome;
     }
 
-    public Integer getIdMonitor() {
+    public Long getIdMonitor() {
         return idMonitor;
     }
 
-    public void setIdMonitor(Integer idMonitor) {
+    public void setIdMonitor(Long idMonitor) {
         this.idMonitor = idMonitor;
     }
 

@@ -1,3 +1,4 @@
+<%@page import="java.math.BigInteger"%>
 <%@include file="../cabecalho.jsp"%>
 <%@page import="dao.ProfAvalDAO"%>
 <%@page import="modelo.ProfAval"%>
@@ -11,16 +12,16 @@
     else
     {
              
-        Integer idPA = Integer.parseInt(request.getParameter("txtIdpa"));
+        Long idPA = Long.parseLong(request.getParameter("txtIdpa"));
         String periodoPA = request.getParameter("txtPeriodoPA");
-        Integer respostaPA = Integer.parseInt(request.getParameter("txtPAResposta"));
+        BigInteger v_resposta = new BigInteger(request.getParameter("txtPAResposta"));
         
         ProfAvalDAO dao = new ProfAvalDAO();
         ProfAval pa = new ProfAval();
-
+        
         pa.setIdProfaval(idPA);
         pa.setPaPeriodo(periodoPA);
-        pa.setPaResposta1(respostaPA);
+        pa.setPaResposta1(v_resposta);
         
        try
         {

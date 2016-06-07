@@ -9,7 +9,7 @@
     }
     else
     {
-        Integer idMonitor = Integer.parseInt(request.getParameter("ID"));
+        Long idMonitor = Long.parseLong(request.getParameter("ID"));
         
         MonitorDAO dao = new MonitorDAO();
 

@@ -9,7 +9,7 @@
     }
     else
     {
-        Integer idProfessor = Integer.parseInt(request.getParameter("IdProf"));
+        Long idProfessor = Long.parseLong(request.getParameter("IdProf"));
         
         ProfessorDAO dao = new ProfessorDAO();
 

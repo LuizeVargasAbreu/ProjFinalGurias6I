@@ -3,25 +3,25 @@
 <%@page import="dao.ProfAvalDAO"%>
 <%
     String msg = "";
-    if(request.getParameter("id")==null)
+    if(request.getParameter("Idpa")==null)
     {
         response.sendRedirect("list.jsp");
     }
     else
     {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        Long idPA = Long.parseLong(request.getParameter("Idpa"));
         
         ProfAvalDAO dao = new ProfAvalDAO();
 
-        ProfAval pa = dao.buscarPorChavePrimaria(id);
+        ProfAval pa = dao.buscarPorChavePrimaria(idPA);
         if(pa!=null)
         {
             dao.excluir(pa);
-            msg = "Registro de ProfAval excluído com sucesso";
+            msg = "Avaliação de Professor excluída com sucesso";
         }
         else
         {
-            msg = "Registro de ProfAval não encontrado. Verifique.";
+            msg = "Registro de avaliação não encontrado. Verifique.";
         }
         
     }

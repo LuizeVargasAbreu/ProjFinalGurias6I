@@ -74,7 +74,7 @@ public class MonitorDAO {
         }
     }
     
-     public Monitor buscarPorChavePrimaria(Integer chave)
+     public Monitor buscarPorChavePrimaria(Long chave)
     {
         return em.find(Monitor.class, chave);
     }

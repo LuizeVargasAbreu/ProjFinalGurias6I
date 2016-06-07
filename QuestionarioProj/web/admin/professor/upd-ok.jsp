@@ -8,7 +8,7 @@
         return;
     }
 
-    Integer idProfessor = Integer.parseInt(request.getParameter("txtIdProf"));
+    Long idProfessor = Long.parseLong(request.getParameter("txtIdProf"));
     String nm_prof = request.getParameter("txtNmProfessor");
     String per_prof = request.getParameter("txtPeriodoProf");
 

@@ -74,7 +74,7 @@ public class ProfessorDAO {
         }
     }
     
-    public Professor buscarPorChavePrimaria(Integer chave)
+    public Professor buscarPorChavePrimaria(Long chave)
     {
         return em.find(Professor.class, chave);
     }

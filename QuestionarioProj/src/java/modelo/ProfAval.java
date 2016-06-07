@@ -6,7 +6,7 @@
 package modelo;
 
 import java.io.Serializable;
-import java.lang.Integer;
+import java.math.BigInteger;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,74 +26,62 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "prof_aval")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ProfAval.findAll", query = "SELECT p FROM ProfAval p"),
-    @NamedQuery(name = "ProfAval.findByIdProfaval", query = "SELECT p FROM ProfAval p WHERE p.idProfaval = :idProfaval"),
-    @NamedQuery(name = "ProfAval.findByPaPeriodo", query = "SELECT p FROM ProfAval p WHERE p.paPeriodo = :paPeriodo"),
-    @NamedQuery(name = "ProfAval.findByPaResposta1", query = "SELECT p FROM ProfAval p WHERE p.paResposta1 = :paResposta1"),
-    @NamedQuery(name = "ProfAval.findByPaResposta2", query = "SELECT p FROM ProfAval p WHERE p.paResposta2 = :paResposta2"),
-    @NamedQuery(name = "ProfAval.findByPaResposta3", query = "SELECT p FROM ProfAval p WHERE p.paResposta3 = :paResposta3"),
-    @NamedQuery(name = "ProfAval.findByPaResposta4", query = "SELECT p FROM ProfAval p WHERE p.paResposta4 = :paResposta4"),
-    @NamedQuery(name = "ProfAval.findByPaResposta5", query = "SELECT p FROM ProfAval p WHERE p.paResposta5 = :paResposta5"),
-    @NamedQuery(name = "ProfAval.findByPaResposta6", query = "SELECT p FROM ProfAval p WHERE p.paResposta6 = :paResposta6"),
-    @NamedQuery(name = "ProfAval.findByPaResposta7", query = "SELECT p FROM ProfAval p WHERE p.paResposta7 = :paResposta7"),
-    @NamedQuery(name = "ProfAval.findByPaResposta8", query = "SELECT p FROM ProfAval p WHERE p.paResposta8 = :paResposta8"),
-    @NamedQuery(name = "ProfAval.findByPaResposta9", query = "SELECT p FROM ProfAval p WHERE p.paResposta9 = :paResposta9"),
-    @NamedQuery(name = "ProfAval.findByPaResposta10", query = "SELECT p FROM ProfAval p WHERE p.paResposta10 = :paResposta10")})
+    @NamedQuery(name = "ProfAval.findAll", query = "SELECT p FROM ProfAval p")})
 public class ProfAval implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "id_profaval")
-    private Integer idProfaval;
+    private Long idProfaval;
     @Basic(optional = false)
     @Column(name = "pa_periodo")
     private String paPeriodo;
     @Basic(optional = false)
     @Column(name = "pa_resposta1")
-    private Integer paResposta1;
+    private BigInteger paResposta1;
     @Basic(optional = false)
     @Column(name = "pa_resposta2")
-    private Integer paResposta2;
+    private BigInteger paResposta2;
     @Basic(optional = false)
     @Column(name = "pa_resposta3")
-    private Integer paResposta3;
+    private BigInteger paResposta3;
     @Basic(optional = false)
     @Column(name = "pa_resposta4")
-    private Integer paResposta4;
+    private BigInteger paResposta4;
     @Basic(optional = false)
     @Column(name = "pa_resposta5")
-    private Integer paResposta5;
+    private BigInteger paResposta5;
     @Basic(optional = false)
     @Column(name = "pa_resposta6")
-    private Integer paResposta6;
+    private BigInteger paResposta6;
     @Basic(optional = false)
     @Column(name = "pa_resposta7")
-    private Integer paResposta7;
+    private BigInteger paResposta7;
     @Basic(optional = false)
     @Column(name = "pa_resposta8")
-    private Integer paResposta8;
+    private BigInteger paResposta8;
     @Basic(optional = false)
     @Column(name = "pa_resposta9")
-    private Integer paResposta9;
+    private BigInteger paResposta9;
     @Basic(optional = false)
     @Column(name = "pa_resposta10")
-    private Integer paResposta10;
+    private BigInteger paResposta10;
     @JoinColumn(name = "id_professor", referencedColumnName = "id_professor")
     @ManyToOne(optional = false)
-    private Professor Professor;
+    private Professor idProfessor;
     @JoinColumn(name = "id_questionario", referencedColumnName = "id_questionario")
     @ManyToOne(optional = false)
-    private Questionario Questionario;
+    private Questionario idQuestionario;
 
     public ProfAval() {
     }
 
-    public ProfAval(Integer idProfaval) {
+    public ProfAval(Long idProfaval) {
         this.idProfaval = idProfaval;
     }
 
-    public ProfAval(Integer idProfaval, String paPeriodo, Integer paResposta1, Integer paResposta2, Integer paResposta3, Integer paResposta4, Integer paResposta5, Integer paResposta6, Integer paResposta7, Integer paResposta8, Integer paResposta9, Integer paResposta10) {
+    public ProfAval(Long idProfaval, String paPeriodo, BigInteger paResposta1, BigInteger paResposta2, BigInteger paResposta3, BigInteger paResposta4, BigInteger paResposta5, BigInteger paResposta6, BigInteger paResposta7, BigInteger paResposta8, BigInteger paResposta9, BigInteger paResposta10) {
         this.idProfaval = idProfaval;
         this.paPeriodo = paPeriodo;
         this.paResposta1 = paResposta1;
@@ -108,11 +96,11 @@ public class ProfAval implements Serializable {
         this.paResposta10 = paResposta10;
     }
 
-    public Integer getIdProfaval() {
+    public Long getIdProfaval() {
         return idProfaval;
     }
 
-    public void setIdProfaval(Integer idProfaval) {
+    public void setIdProfaval(Long idProfaval) {
         this.idProfaval = idProfaval;
     }
 
@@ -124,100 +112,100 @@ public class ProfAval implements Serializable {
         this.paPeriodo = paPeriodo;
     }
 
-    public Integer getPaResposta1() {
+    public BigInteger getPaResposta1() {
         return paResposta1;
     }
 
-    public void setPaResposta1(Integer paResposta1) {
+    public void setPaResposta1(BigInteger paResposta1) {
         this.paResposta1 = paResposta1;
     }
 
-    public Integer getPaResposta2() {
+    public BigInteger getPaResposta2() {
         return paResposta2;
     }
 
-    public void setPaResposta2(Integer paResposta2) {
+    public void setPaResposta2(BigInteger paResposta2) {
         this.paResposta2 = paResposta2;
     }
 
-    public Integer getPaResposta3() {
+    public BigInteger getPaResposta3() {
         return paResposta3;
     }
 
-    public void setPaResposta3(Integer paResposta3) {
+    public void setPaResposta3(BigInteger paResposta3) {
         this.paResposta3 = paResposta3;
     }
 
-    public Integer getPaResposta4() {
+    public BigInteger getPaResposta4() {
         return paResposta4;
     }
 
-    public void setPaResposta4(Integer paResposta4) {
+    public void setPaResposta4(BigInteger paResposta4) {
         this.paResposta4 = paResposta4;
     }
 
-    public Integer getPaResposta5() {
+    public BigInteger getPaResposta5() {
         return paResposta5;
     }
 
-    public void setPaResposta5(Integer paResposta5) {
+    public void setPaResposta5(BigInteger paResposta5) {
         this.paResposta5 = paResposta5;
     }
 
-    public Integer getPaResposta6() {
+    public BigInteger getPaResposta6() {
         return paResposta6;
     }
 
-    public void setPaResposta6(Integer paResposta6) {
+    public void setPaResposta6(BigInteger paResposta6) {
         this.paResposta6 = paResposta6;
     }
 
-    public Integer getPaResposta7() {
+    public BigInteger getPaResposta7() {
         return paResposta7;
     }
 
-    public void setPaResposta7(Integer paResposta7) {
+    public void setPaResposta7(BigInteger paResposta7) {
         this.paResposta7 = paResposta7;
     }
 
-    public Integer getPaResposta8() {
+    public BigInteger getPaResposta8() {
         return paResposta8;
     }
 
-    public void setPaResposta8(Integer paResposta8) {
+    public void setPaResposta8(BigInteger paResposta8) {
         this.paResposta8 = paResposta8;
     }
 
-    public Integer getPaResposta9() {
+    public BigInteger getPaResposta9() {
         return paResposta9;
     }
 
-    public void setPaResposta9(Integer paResposta9) {
+    public void setPaResposta9(BigInteger paResposta9) {
         this.paResposta9 = paResposta9;
     }
 
-    public Integer getPaResposta10() {
+    public BigInteger getPaResposta10() {
         return paResposta10;
     }
 
-    public void setPaResposta10(Integer paResposta10) {
+    public void setPaResposta10(BigInteger paResposta10) {
         this.paResposta10 = paResposta10;
     }
 
     public Professor getProfessor() {
-        return Professor;
+        return idProfessor;
     }
 
-    public void setProfessor(Professor idProfessor) {
-        this.Professor = idProfessor;
+    public void setProfessor(Professor professor) {
+        this.idProfessor = professor;
     }
 
     public Questionario getQuestionario() {
-        return Questionario;
+        return idQuestionario;
     }
 
-    public void setQuestionario(Questionario idQuestionario) {
-        this.Questionario = idQuestionario;
+    public void setIdQuestionario(Questionario questionario) {
+        this.idQuestionario = questionario;
     }
 
     @Override

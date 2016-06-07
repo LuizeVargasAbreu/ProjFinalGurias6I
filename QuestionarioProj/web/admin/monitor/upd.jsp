@@ -8,7 +8,7 @@
         return;
     }
 
-    Integer idMonitor = Integer.parseInt(request.getParameter("ID"));
+    Long idMonitor = Long.parseLong(request.getParameter("ID"));
     String nome = request.getParameter("txtNome");
     String periodo = request.getParameter("txtPeriodo");
     

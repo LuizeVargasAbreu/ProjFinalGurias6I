@@ -27,19 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "questionario")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Questionario.findAll", query = "SELECT q FROM Questionario q"),
-    @NamedQuery(name = "Questionario.findByIdQuestionario", query = "SELECT q FROM Questionario q WHERE q.idQuestionario = :idQuestionario"),
-    @NamedQuery(name = "Questionario.findByPergunta1", query = "SELECT q FROM Questionario q WHERE q.pergunta1 = :pergunta1"),
-    @NamedQuery(name = "Questionario.findByPergunta2", query = "SELECT q FROM Questionario q WHERE q.pergunta2 = :pergunta2"),
-    @NamedQuery(name = "Questionario.findByPergunta3", query = "SELECT q FROM Questionario q WHERE q.pergunta3 = :pergunta3"),
-    @NamedQuery(name = "Questionario.findByPergunta4", query = "SELECT q FROM Questionario q WHERE q.pergunta4 = :pergunta4"),
-    @NamedQuery(name = "Questionario.findByPergunta5", query = "SELECT q FROM Questionario q WHERE q.pergunta5 = :pergunta5"),
-    @NamedQuery(name = "Questionario.findByPergunta6", query = "SELECT q FROM Questionario q WHERE q.pergunta6 = :pergunta6"),
-    @NamedQuery(name = "Questionario.findByPergunta7", query = "SELECT q FROM Questionario q WHERE q.pergunta7 = :pergunta7"),
-    @NamedQuery(name = "Questionario.findByPergunta8", query = "SELECT q FROM Questionario q WHERE q.pergunta8 = :pergunta8"),
-    @NamedQuery(name = "Questionario.findByPergunta9", query = "SELECT q FROM Questionario q WHERE q.pergunta9 = :pergunta9"),
-    @NamedQuery(name = "Questionario.findByPergunta10", query = "SELECT q FROM Questionario q WHERE q.pergunta10 = :pergunta10"),
-    @NamedQuery(name = "Questionario.findByQuestPeriodo", query = "SELECT q FROM Questionario q WHERE q.questPeriodo = :questPeriodo")})
+    @NamedQuery(name = "Questionario.findAll", query = "SELECT q FROM Questionario q")})
 public class Questionario implements Serializable {
 
     private static final long serialVersionUID = 1L;

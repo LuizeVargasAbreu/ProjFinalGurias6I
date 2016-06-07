@@ -25,10 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "disciplina")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Disciplina.findAll", query = "SELECT d FROM Disciplina d"),
-    @NamedQuery(name = "Disciplina.findByIdDisciplina", query = "SELECT d FROM Disciplina d WHERE d.idDisciplina = :idDisciplina"),
-    @NamedQuery(name = "Disciplina.findByDiscNome", query = "SELECT d FROM Disciplina d WHERE d.discNome = :discNome"),
-    @NamedQuery(name = "Disciplina.findByArea", query = "SELECT d FROM Disciplina d WHERE d.area = :area")})
+    @NamedQuery(name = "Disciplina.findAll", query = "SELECT d FROM Disciplina d")})
 public class Disciplina implements Serializable {
 
     private static final long serialVersionUID = 1L;

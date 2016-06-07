@@ -26,19 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "moni_aval")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "MoniAval.findAll", query = "SELECT m FROM MoniAval m"),
-    @NamedQuery(name = "MoniAval.findByIdMoniaval", query = "SELECT m FROM MoniAval m WHERE m.idMoniaval = :idMoniaval"),
-    @NamedQuery(name = "MoniAval.findByMaPeriodo", query = "SELECT m FROM MoniAval m WHERE m.maPeriodo = :maPeriodo"),
-    @NamedQuery(name = "MoniAval.findByMaResposta1", query = "SELECT m FROM MoniAval m WHERE m.maResposta1 = :maResposta1"),
-    @NamedQuery(name = "MoniAval.findByMaResposta2", query = "SELECT m FROM MoniAval m WHERE m.maResposta2 = :maResposta2"),
-    @NamedQuery(name = "MoniAval.findByMaResposta3", query = "SELECT m FROM MoniAval m WHERE m.maResposta3 = :maResposta3"),
-    @NamedQuery(name = "MoniAval.findByMaResposta4", query = "SELECT m FROM MoniAval m WHERE m.maResposta4 = :maResposta4"),
-    @NamedQuery(name = "MoniAval.findByMaResposta5", query = "SELECT m FROM MoniAval m WHERE m.maResposta5 = :maResposta5"),
-    @NamedQuery(name = "MoniAval.findByMaResposta6", query = "SELECT m FROM MoniAval m WHERE m.maResposta6 = :maResposta6"),
-    @NamedQuery(name = "MoniAval.findByMaResposta7", query = "SELECT m FROM MoniAval m WHERE m.maResposta7 = :maResposta7"),
-    @NamedQuery(name = "MoniAval.findByMaResposta8", query = "SELECT m FROM MoniAval m WHERE m.maResposta8 = :maResposta8"),
-    @NamedQuery(name = "MoniAval.findByMaResposta9", query = "SELECT m FROM MoniAval m WHERE m.maResposta9 = :maResposta9"),
-    @NamedQuery(name = "MoniAval.findByMaResposta10", query = "SELECT m FROM MoniAval m WHERE m.maResposta10 = :maResposta10")})
+    @NamedQuery(name = "MoniAval.findAll", query = "SELECT m FROM MoniAval m")})
 public class MoniAval implements Serializable {
 
     private static final long serialVersionUID = 1L;

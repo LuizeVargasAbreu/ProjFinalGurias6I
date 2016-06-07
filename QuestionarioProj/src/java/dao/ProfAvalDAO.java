@@ -74,7 +74,7 @@ public class ProfAvalDAO {
         }
     }
     
-     public ProfAval buscarPorChavePrimaria(Integer chave)
+     public ProfAval buscarPorChavePrimaria(Long chave)
     {
         return em.find(ProfAval.class, chave);
     }

@@ -27,17 +27,14 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "professor")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Professor.findAll", query = "SELECT p FROM Professor p"),
-    @NamedQuery(name = "Professor.findByIdProfessor", query = "SELECT p FROM Professor p WHERE p.idProfessor = :idProfessor"),
-    @NamedQuery(name = "Professor.findByProfPeriodo", query = "SELECT p FROM Professor p WHERE p.profPeriodo = :profPeriodo"),
-    @NamedQuery(name = "Professor.findByProfNome", query = "SELECT p FROM Professor p WHERE p.profNome = :profNome")})
+    @NamedQuery(name = "Professor.findAll", query = "SELECT p FROM Professor p")})
 public class Professor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "id_professor")
-    private Integer idProfessor;
+    private Long idProfessor;
     @Basic(optional = false)
     @Column(name = "prof_periodo")
     private String profPeriodo;
@@ -52,21 +49,21 @@ public class Professor implements Serializable {
     public Professor() {
     }
 
-    public Professor(Integer idProfessor) {
+    public Professor(Long idProfessor) {
         this.idProfessor = idProfessor;
     }
 
-    public Professor(Integer idProfessor, String profPeriodo, String profNome) {
+    public Professor(Long idProfessor, String profPeriodo, String profNome) {
         this.idProfessor = idProfessor;
         this.profPeriodo = profPeriodo;
         this.profNome = profNome;
     }
 
-    public Integer getIdProfessor() {
+    public Long getIdProfessor() {
         return idProfessor;
     }
 
-    public void setIdProfessor(Integer idProfessor) {
+    public void setIdProfessor(Long idProfessor) {
         this.idProfessor = idProfessor;
     }
 

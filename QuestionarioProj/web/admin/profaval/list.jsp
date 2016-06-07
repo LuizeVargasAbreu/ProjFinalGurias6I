@@ -30,7 +30,7 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
     <div class="mdl-card mdl-cell mdl-cell--12-col">
         <div class="mdl-card__supporting-text">
-            <h4>ProfAval</h4>
+            <h4>Avaliação de Professores</h4>
             <!-- Colored mini FAB button -->
             <div class="direita">
                 <a href="add.jsp">
@@ -44,8 +44,10 @@
                 <thead>
                     <tr>
 
-                        <th>ID</th>
-                        <th>Nome</th>
+                        <th>ID da Avaliação</th>
+                        <th>Professor Avaliado</th>
+                        <th>Período</th>
+                        <th>Respostas</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -54,14 +56,16 @@
                 %>
                 <tbody>
                     <tr>
-                        <td><%=item.getId()%></td>
-                        <td><%=item.getNome()%></td>
+                        <td><%=item.getIdProfaval()%></td>
+                        <td><%=item.getProfessor()%></td>
+                        <td><%=item.getPaPeriodo()%></td>
+                        <td><%=item.getPaResposta1()%></td>
                         <td>
                             <!-- 
                                 Atualizar 
                             -->
                             <div id="ttupd" class="icon material-icons">
-                                <i class="material-icons"><a href="upd.jsp?id=<%=item.getId()%>">update</a></i>
+                                <i class="material-icons"><a href="upd.jsp?Idpa=<%=item.getIdProfaval()%>">update</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttupd">
                                 Atualizar
@@ -70,7 +74,7 @@
                                 Excluir 
                             -->
                             <div id="ttdel" class="icon material-icons">
-                                <i class="material-icons"><a href="del-ok.jsp?id=<%=item.getId()%>">delete</a></i>
+                                <i class="material-icons"><a href="del-ok.jsp?Idpa=<%=item.getIdProfaval()%>">delete</a></i>
                             </div>
                             <div class="mdl-tooltip" for="ttdel">
                                 Excluir
