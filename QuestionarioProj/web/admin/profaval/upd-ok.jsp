@@ -4,7 +4,7 @@
 <%@page import="modelo.ProfAval"%>
 <%@page import="dao.ProfAvalDAO"%>
 <%
-    if (request.getParameter("txtIdpa") == null || request.getParameter("txtPeriodoPA")== null || request.getParameter("txtPAResposta") == null)
+    if (request.getParameter("txtIdpa") == null)
     {
         response.sendRedirect("list.jsp");
         return;

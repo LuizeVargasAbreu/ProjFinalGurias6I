@@ -47,7 +47,6 @@
                         <th>ID da Avaliação</th>
                         <th>Professor Avaliado</th>
                         <th>Período</th>
-                        <th>Respostas</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -59,7 +58,6 @@
                         <td><%=item.getIdProfaval()%></td>
                         <td><%=item.getProfessor()%></td>
                         <td><%=item.getPaPeriodo()%></td>
-                        <td><%=item.getPaResposta1()%></td>
                         <td>
                             <!-- 
                                 Atualizar 

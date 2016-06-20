@@ -8,7 +8,10 @@
 <%
     String msg="";
     // ARRUMAR OS REQUESTS DO IF
-    if(request.getParameter("txtIdpa") == null || request.getParameter("txtPeriodoPA")== null || request.getParameter("txtPAResposta") == null)
+    if(request.getParameter("txtIdpa") == null || request.getParameter("txtPeriodoPA")== null || request.getParameter("txtPAResposta1") == null 
+            || request.getParameter("txtPAResposta2") == null || request.getParameter("txtPAResposta3") == null || request.getParameter("txtPAResposta4") == null
+            || request.getParameter("txtPAResposta5") == null || request.getParameter("txtPAResposta7") == null || request.getParameter("txtPAResposta8") == null
+            || request.getParameter("txtPAResposta9") == null || request.getParameter("txtPAResposta10") == null)        
     {
         response.sendRedirect("list.jsp");
     }
